@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             BackgroundColor="Black"
+             mc:Ignorable="d"
+             Title="Home"
+             x:Class="BudgetManager.ExpenseEntry">
+    <ContentPage.Content>
+        <StackLayout Padding="18" Spacing="12">
+            <Label Text="Date:" FontSize="20" TextColor="Beige"/>
+            <DatePicker DateSelected="DatePicker_DateSelected" BackgroundColor="Beige"/>
+            <Label x:Name="DateLabel" FontSize="20" TextColor="Beige"/>
+
+            <Label Text="Expense Name:" FontSize="20" TextColor="Beige"/>
+            <Entry x:Name="ExpenseName"
+                   Placeholder="Enter Expense Name" BackgroundColor="Beige"/>
+
+            <Label Text="Expense:" FontSize="20" TextColor="Beige"/>
+            <Entry x:Name="ExpenseTotal"
+                   Placeholder="0.00"
+                   Keyboard="Numeric"
+                   BackgroundColor="Beige"/>
+
+            <Label Text="Category:" FontSize="20" TextColor="Beige"/>
+            <Picker x:Name="CategoryPicker"
+                    Title="Choose Category" 
+                    TextColor="Beige" 
+                    TitleColor="Beige"
+                    BackgroundColor="Beige"/>
+
+            <Button Text="Save"
+                    FontSize="15"
+                    BackgroundColor="#77D065"
+                    TextColor="#FFFFFF"
+                    HorizontalOptions="FillAndExpand"
+                    Clicked="OnSaveButtonClicked"/>
+
+            <Button Grid.Column="1"
+                    FontSize="15"
+                    Text="Cancel" BackgroundColor="#77D065"  
+                    TextColor="#FFFFFF" 
+                    HorizontalOptions="FillAndExpand"                                   
+                    Clicked="OnCancelButtonClicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

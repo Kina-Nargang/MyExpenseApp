@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="My Expense App"
+             BackgroundColor="Black"
+             x:Class="BudgetManager.MainPage">
+
+    <StackLayout>
+        <Label Text="Welcome to My Expense!" 
+               TextColor="HotPink"
+               FontSize="30"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"          
+               VerticalOptions="CenterAndExpand" />
+        <Image x:Name="MyImage" Source="piggybank1.jpg"/>
+        <Label 
+                Text="Please add your budget first."
+                TextColor="HotPink"
+                FontSize="30"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"          
+                VerticalOptions="CenterAndExpand" />
+       
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="+Expense" 
+                    BackgroundColor="#77D065"
+                    TextColor="#FFFFFF"
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="20"
+                    Clicked="Expense_Clicked"/>
+            <Button Grid.Column="1"
+                    Text="+Budget" 
+                    BackgroundColor="#77D065"
+                    TextColor="#FFFFFF"
+                    HorizontalOptions="FillAndExpand" 
+                    FontSize="20"
+                    Clicked="Budget_Clicked"/>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
