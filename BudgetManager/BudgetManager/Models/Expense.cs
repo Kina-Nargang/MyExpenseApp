@@ -7,10 +7,18 @@ namespace BudgetManager.Models
     public enum ExpenseCategory
     {
         Travel,
-        Clothing,
+        Clothes,
         Groceries,
         Education,
-        Children
+        Children,
+        Shoes,
+        EatingOut,
+        Entertainment,
+        Fuel,
+        General,
+        Gifts,
+        Holidays,
+        Sport
     };
     public class Expense
     {
