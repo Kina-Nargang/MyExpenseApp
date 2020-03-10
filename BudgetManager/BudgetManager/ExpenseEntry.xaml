@@ -8,42 +8,44 @@
              Title="Home"
              x:Class="BudgetManager.ExpenseEntry">
     <ContentPage.Content>
-        <StackLayout Padding="18" Spacing="12">
+        <StackLayout Padding="18" Spacing="15">
+            
             <Label Text="Date:" FontSize="20" TextColor="Beige"/>
             <DatePicker DateSelected="DatePicker_DateSelected" BackgroundColor="Beige"/>
-            <Label x:Name="DateLabel" FontSize="20" TextColor="Beige"/>
+            <Label x:Name="DateLabel" FontSize="20" TextColor="Beige" Text="{Binding Date}"/>
 
             <Label Text="Expense Name:" FontSize="20" TextColor="Beige"/>
             <Entry x:Name="ExpenseName"
-                   Placeholder="Enter Expense Name" BackgroundColor="Beige"/>
+                   Placeholder="Enter Expense Name" 
+                   BackgroundColor="Beige"
+                   Text="{Binding Text}"/>
 
             <Label Text="Expense:" FontSize="20" TextColor="Beige"/>
             <Entry x:Name="ExpenseTotal"
-                   Placeholder="0.00"
-                   Keyboard="Numeric"
-                   BackgroundColor="Beige"/>
+                    Placeholder="0.00"
+                    Keyboard="Numeric"
+                    BackgroundColor="Beige"
+                    Text="{Binding Amount}"/>
 
             <Label Text="Category:" FontSize="20" TextColor="Beige"/>
             <Picker x:Name="CategoryPicker"
                     Title="Choose Category" 
-                    TextColor="Beige" 
-                    TitleColor="Beige"
-                    BackgroundColor="Beige"/>
+                    TitleColor="Black"
+                    BackgroundColor="Beige" />
 
             <Button Text="Save"
-                    FontSize="15"
-                    BackgroundColor="#77D065"
-                    TextColor="#FFFFFF"
-                    HorizontalOptions="FillAndExpand"
-                    Clicked="OnSaveButtonClicked"/>
+                FontSize="18"
+                BackgroundColor="#77D065"
+                TextColor="#FFFFFF"
+                HorizontalOptions="FillAndExpand"
+                Clicked="OnSaveButtonClicked"/>
 
-            <Button Grid.Column="1"
-                    FontSize="15"
-                    Text="Cancel" BackgroundColor="#77D065"  
-                    TextColor="#FFFFFF" 
-                    HorizontalOptions="FillAndExpand"                                   
-                    Clicked="OnCancelButtonClicked"/>
-
+            <Button Text="Cancel"
+                FontSize="18"
+                BackgroundColor="#77D065"  
+                TextColor="#FFFFFF" 
+                HorizontalOptions="FillAndExpand"                                   
+                Clicked="OnCancelButtonClicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
