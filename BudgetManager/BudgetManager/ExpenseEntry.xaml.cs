@@ -25,24 +25,43 @@ namespace BudgetManager
             }
 
             CategoryPicker.ItemsSource = categories;
+
+             
+        }
+
+        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DateLabel.Text = e.NewDate.ToString();
         }
 
         private async void OnSaveButtonClicked(object sender, EventArgs e)
         {
+
+            this.BindingContext = new Expense();
             var expense = (Expense)BindingContext;
+
+            var filename = Path.Combine(App.FolderPath,
+                            $"{Path.GetRandomFileName()}.expenses.txt");
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append(expense.Date);
+            stringBuilder.Append(",");
+            stringBuilder.Append(expense.Text);
+            stringBuilder.Append(",");
+            stringBuilder.Append(expense.Amount);
+            stringBuilder.Append(",");
+            stringBuilder.Append(expense.Category);
+
             if (string.IsNullOrEmpty(expense.Filename))
             {
-                var filename = Path.Combine(App.FolderPath, 
-                    $"{Path.GetRandomFileName()}.expenses.txt");
-
-                File.WriteAllText(filename,expense.Text);
+                File.WriteAllText(filename, stringBuilder.ToString());
             }
             else
             {
-                File.WriteAllText(expense.Filename, expense.Text);
+                File.WriteAllText(expense.Filename, stringBuilder.ToString());
             }
 
-            await Navigation.PopAsync();
+            await Navigation.PushAsync(new ExpenseList());
 
         }
 
@@ -64,10 +83,6 @@ namespace BudgetManager
 
         }
 
-        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
-        {
-            DateLabel.Text = e.NewDate.ToString();
-        }
 
        
     }

@@ -12,26 +12,29 @@
             
             <Label Text="Date:" FontSize="20" TextColor="Beige"/>
             <DatePicker DateSelected="DatePicker_DateSelected" BackgroundColor="Beige"/>
-            <Label x:Name="DateLabel" FontSize="20" TextColor="Beige" Text="{Binding Date}"/>
+            <Label x:Name="DateLabel" FontSize="20" TextColor="Beige" Text="{Binding Expense.Date}"/>
 
             <Label Text="Expense Name:" FontSize="20" TextColor="Beige"/>
             <Entry x:Name="ExpenseName"
                    Placeholder="Enter Expense Name" 
                    BackgroundColor="Beige"
-                   Text="{Binding Text}"/>
+                   ClearButtonVisibility="WhileEditing"
+                   Text="{x:Binding Expense.Text}"/>
 
             <Label Text="Expense:" FontSize="20" TextColor="Beige"/>
             <Entry x:Name="ExpenseTotal"
                     Placeholder="0.00"
                     Keyboard="Numeric"
                     BackgroundColor="Beige"
-                    Text="{Binding Amount}"/>
+                    ClearButtonVisibility="WhileEditing"
+                    Text="{x:Binding Expense.Amount}"/>
 
             <Label Text="Category:" FontSize="20" TextColor="Beige"/>
             <Picker x:Name="CategoryPicker"
                     Title="Choose Category" 
                     TitleColor="Black"
-                    BackgroundColor="Beige" />
+                    BackgroundColor="Beige" 
+                    SelectedItem="{x:Binding Expense.Category}"/>
 
             <Button Text="Save"
                 FontSize="18"
