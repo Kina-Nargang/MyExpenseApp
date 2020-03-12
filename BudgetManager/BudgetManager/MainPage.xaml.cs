@@ -16,7 +16,6 @@ namespace BudgetManager
         public MainPage()
         {
             InitializeComponent();
-            //MyImage.Source = ImageSource.FromResource("BudgetManager.Image.money.png");
         }
 
         private async void Expense_Clicked(object sender, EventArgs e)
