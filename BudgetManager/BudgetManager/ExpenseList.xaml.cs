@@ -23,31 +23,28 @@ namespace BudgetManager
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            
             var expense = new List<Expense>();
-            var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.txt");
-
-            // this logic is not ready yet
+            var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.csv");
+            
             foreach(var filename in files)
             {
                 string file = File.ReadAllText(filename);
                 string[] array = file.Split(',');
+                //string[] array = file.Split(new char[] { ',' });
 
                 expense.Add(new Expense
                 {
                     Filename = filename,
-                    Text = array[1],
-                    Date = DateTime.Parse(array[0]),
-                    Amount = array[2],
-                    Category = (ExpenseCategory)Enum.GetName(typeof(ExpenseCategory),2)
-                    //Category = ExpenseCategory.Children
+                    Text = array[0],
+                    Date = File.GetCreationTime(filename),
+                    Amount = array[1],
+                    Category = (ExpenseCategory)Enum.ToObject(typeof(ExpenseCategory), int.Parse(array[2]))
                 });
 
-               
-                listView.ItemsSource = expense.OrderBy(n => n.Date).ToString();
             }
-            
+
+            listView.ItemsSource = expense.OrderByDescending(n => n.Date).ToList();
+            //listView.ItemsSource = expense.OrderBy(e => e.Amount).ToList();
         }
 
         async void OnExpenseAddedClicked(object sender, EventArgs e)

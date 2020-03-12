@@ -5,21 +5,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              BackgroundColor="Black"
              mc:Ignorable="d"
-             Title="Home"
+             Title="Expense Entry"
              x:Class="BudgetManager.ExpenseEntry">
     <ContentPage.Content>
         <StackLayout Padding="18" Spacing="15">
             
             <Label Text="Date:" FontSize="20" TextColor="Beige"/>
-            <DatePicker DateSelected="DatePicker_DateSelected" BackgroundColor="Beige"/>
-            <Label x:Name="DateLabel" FontSize="20" TextColor="Beige" Text="{Binding Expense.Date}"/>
+            <DatePicker x:Name="datepicker" 
+                        BackgroundColor="Beige" 
+                        Date="{Binding SelectedDate}"/>
+            
 
             <Label Text="Expense Name:" FontSize="20" TextColor="Beige"/>
             <Entry x:Name="ExpenseName"
                    Placeholder="Enter Expense Name" 
                    BackgroundColor="Beige"
                    ClearButtonVisibility="WhileEditing"
-                   Text="{x:Binding Expense.Text}"/>
+                   Text="{Binding Text}"/>
 
             <Label Text="Expense:" FontSize="20" TextColor="Beige"/>
             <Entry x:Name="ExpenseTotal"
@@ -27,14 +29,13 @@
                     Keyboard="Numeric"
                     BackgroundColor="Beige"
                     ClearButtonVisibility="WhileEditing"
-                    Text="{x:Binding Expense.Amount}"/>
+                    Text="{Binding Amount}"/>
 
             <Label Text="Category:" FontSize="20" TextColor="Beige"/>
             <Picker x:Name="CategoryPicker"
                     Title="Choose Category" 
                     TitleColor="Black"
-                    BackgroundColor="Beige" 
-                    SelectedItem="{x:Binding Expense.Category}"/>
+                    BackgroundColor="Beige"/>
 
             <Button Text="Save"
                 FontSize="18"

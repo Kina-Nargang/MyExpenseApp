@@ -25,22 +25,20 @@ namespace BudgetManager
         {
             base.OnAppearing();
 
-            var budget = new List<Budget>();
-            var files = Directory.EnumerateFiles(App.FolderPath, "*.MonthlyBudget.txt");
+            string[] files = Directory.GetFiles(App.FolderPath, "*.MonthlyBudget.txt");
 
-            //string[] files = Directory.GetFiles(App.FolderPath, "*.MonthlyBudget.txt");
-/*
             if (files.Length != 0)
             {
                 filename = files[0];
                 string budget = File.ReadAllText(filename);
                 editor.Text = budget;
+
+                Navigation.PushAsync(new ExpenseList());
             }
             else
             {
                 editor.Text = string.Empty;
             }
-        */
         }
 
         async void OnSaveButtonClicked(object sender,EventArgs e)

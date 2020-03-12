@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="BudgetManager.ExpenseList"
-             Title="Expenses list">
+             BackgroundColor="Black"
+             Title="Expenses List">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add expense"
                      Clicked="OnExpenseAddedClicked" />
@@ -15,8 +16,11 @@
               ItemSelected="OnListViewItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Text}"
-                          Detail="{Binding Date}"/>
+                <TextCell Text="{Binding Text}" 
+                          TextColor="HotPink"
+                          Height="120"
+                          Detail="{Binding Date}"
+                          DetailColor="Beige"/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

@@ -6,25 +6,36 @@
              BackgroundColor="Black"
              mc:Ignorable="d"
              x:Class="BudgetManager.BudgetEntry"
-             Title="Home">
-    <StackLayout Margin="10,35,10,10">
+             Title="Budget">
+    <StackLayout Margin="20,10,35,30">
+        <Label Text="Please Entry Your Monthly Budget Here:" 
+               TextColor="HotPink" 
+               FontSize="20"/>
         <Editor x:Name="editor"
                 Text="{Binding Text}"
-                Margin="50, 100, 0, 0"
+                TextColor="Black"
+                Margin="0, 20, 0, 30"
+                WidthRequest="600"
                 Placeholder="Monthly expense goal ($)"
                 HeightRequest="100" 
                 BackgroundColor="Beige"
-                TextColor="Beige"/>
+                Keyboard="Numeric"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Save" BackgroundColor="Beige"
-                    Clicked="OnSaveButtonClicked" />
+            <Button Text="Save" 
+                    BackgroundColor="#77D065"
+                    Clicked="OnSaveButtonClicked"
+                    FontSize="18"
+                    TextColor="#FFFFFF"/>
             <Button Grid.Column="1"
-                    Text="Cancel" BackgroundColor="Beige"
-                 Clicked="OnCancelButtonClicked"/>
+                    Text="Cancel" 
+                    FontSize="18"
+                    BackgroundColor="#77D065"
+                    TextColor="#FFFFFF"
+                    Clicked="OnCancelButtonClicked"/>
         </Grid>
     </StackLayout>
 
