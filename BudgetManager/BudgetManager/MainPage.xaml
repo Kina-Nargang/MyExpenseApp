@@ -9,23 +9,76 @@
              x:Class="BudgetManager.MainPage">
 
     <StackLayout>
-        <Label Text="Welcome to My Expense!" 
+        <Grid Margin="10,10,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Text="Welcome to My Expense!" 
                TextColor="HotPink"
                FontSize="30"
                FontAttributes="Bold"
                HorizontalOptions="Center"          
                VerticalOptions="CenterAndExpand" />
-        <Image x:Name="MyImage" Source="piggybank1.jpg"/>
-        <Label 
+            <Label Grid.Row="1"
                 Text="Please add your budget first."
                 TextColor="HotPink"
-                FontSize="30"
+                FontSize="25"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"          
                 VerticalOptions="CenterAndExpand" />
-       
+        </Grid>
+        
+        <Image x:Name="MyImage" Source="piggybank1.jpg"/>
 
-        <Grid>
+        <Grid Margin="30,30,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Budget:" 
+                   TextColor="Beige" 
+                   FontSize="22"/>
+            <Label Grid.Column="1" 
+                   x:Name="ShowBudget" 
+                   TextColor="LawnGreen" 
+                   HorizontalTextAlignment="Start"
+                   FontSize="22"/>
+        </Grid>
+        <Grid Margin="30,0,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Expense:" TextColor="Beige" FontSize="22"/>
+            <Label Grid.Column="1" 
+                   x:Name="ShowTotal"
+                   HorizontalTextAlignment="Start"
+                   TextColor="PaleVioletRed" 
+                   FontSize="22"/>
+        </Grid>
+        <BoxView WidthRequest="1" 
+                 HeightRequest="1" 
+                 HorizontalOptions="FillAndExpand" 
+                 Color="Beige"/>
+        
+        <Grid Margin="30,0,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Balance:" TextColor="Beige" FontSize="22"/>
+            <Label Grid.Column="1" 
+                   x:Name="ShowBalance" 
+                   TextColor="LightSkyBlue" 
+                   HorizontalTextAlignment="Start"
+                   FontSize="22"/>
+        </Grid>
+
+        <Grid Margin="10,20,10,20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
