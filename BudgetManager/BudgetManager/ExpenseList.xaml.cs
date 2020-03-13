@@ -15,6 +15,7 @@ namespace BudgetManager
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExpenseList : ContentPage
     {
+        public double ExpenseTotal_List { get; set; }
         public ExpenseList()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace BudgetManager
             base.OnAppearing();
             var expense = new List<Expense>();
             var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.csv");
-            
+
             foreach(var filename in files)
             {
                 string file = File.ReadAllText(filename);
@@ -40,9 +41,9 @@ namespace BudgetManager
                     Amount = array[1],
                     Category = (ExpenseCategory)Enum.ToObject(typeof(ExpenseCategory), int.Parse(array[2]))
                 });
-
+                ExpenseTotal_List += double.Parse(array[1]);
             }
-
+            
             listView.ItemsSource = expense.OrderByDescending(n => n.Date).ToList();
             //listView.ItemsSource = expense.OrderBy(e => e.Amount).ToList();
         }
