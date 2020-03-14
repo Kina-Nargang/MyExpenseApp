@@ -7,6 +7,10 @@
              Title="My Expense App"
              BackgroundColor="Black"
              x:Class="BudgetManager.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Clicked="Transaction_Clicked" />
+    </ContentPage.ToolbarItems>
 
     <StackLayout>
         <Grid Margin="10,10,20,20">
