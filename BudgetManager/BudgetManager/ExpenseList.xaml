@@ -19,7 +19,8 @@
                 <TextCell Text="{Binding Text}" 
                           TextColor="HotPink"
                           Height="120"
-                          Detail="{Binding Date}"
+                          d:Detail="{Binding Date}"
+                          Detail="{Binding Amount}"
                           DetailColor="Beige"/>
             </DataTemplate>
         </ListView.ItemTemplate>

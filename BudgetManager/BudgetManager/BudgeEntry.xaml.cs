@@ -21,6 +21,7 @@ namespace BudgetManager
             InitializeComponent();
         }
 
+        /*
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -33,21 +34,21 @@ namespace BudgetManager
                 string budget = File.ReadAllText(filename);
                 editor.Text = budget;
 
-                Navigation.PushAsync(new ExpenseList());
+                //Navigation.PushAsync(new ExpenseList());
             }
             else
             {
                 editor.Text = string.Empty;
             }
         }
-
+*/
         async void OnSaveButtonClicked(object sender,EventArgs e)
         {
             Budget budget = new Budget();
             if (string.IsNullOrWhiteSpace(budget.Filename))
             {
                 filename = Path.Combine(App.FolderPath,
-                    $"{Path.GetRandomFileName()}.MonthlyBudget.txt");
+                    $"{Path.GetRandomFileName()}.MonthlyBudget.csv");
 
                 budget.Filename = filename;
                 budget.Amount = editor.Text;

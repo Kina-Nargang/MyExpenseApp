@@ -38,8 +38,8 @@ namespace BudgetManager
                     Filename = filename,
                     Text = array[0],
                     Date = File.GetCreationTime(filename),
-                    Amount = array[1],
-                    Category = (ExpenseCategory)Enum.ToObject(typeof(ExpenseCategory), int.Parse(array[2]))
+                    Amount = array[1]
+                    //Category = (ExpenseCategory)Enum.ToObject(typeof(ExpenseCategory), int.Parse(array[2]))
                 });
                 ExpenseTotal_List += double.Parse(array[1]);
             }

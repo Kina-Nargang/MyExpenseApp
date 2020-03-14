@@ -53,18 +53,34 @@ namespace BudgetManager
             }
 
             ShowTotal.Text = "$" + Total;
+            /*
+                        //set up budget
+                        string filename_budget = Path.GetFileName("*.MonthlyBudget.txt");
 
-            //set up budget
-            string filename_budget = Path.GetFileName("*.MonthlyBudget.txt");
+                        // first time run, budget file doesn't exist yet. Or file is empty
+                        if (!File.Exists(filename_budget) || File.ReadAllText(filename_budget).Length == 0)
+                        {
+                            Budget = "0.00";
+                        }
+                        else
+                        {
+                            Budget = File.ReadAllText(filename_budget);
+                        }
 
-            // first time run, budget file doesn't exist yet. Or file is empty
-            if (!File.Exists(filename_budget) || File.ReadAllText(filename_budget).Length == 0)
+                        ShowBudget.Text = "$" + Budget;
+            */
+
+            var filename_budget = Directory.EnumerateFiles(App.FolderPath, "*.MonthlyBudget.csv");
+            if (filename_budget == null || !filename_budget.Any())
             {
                 Budget = "0.00";
             }
             else
             {
-                Budget = File.ReadAllText(filename_budget);
+                foreach(var file_budget in filename_budget)
+                {
+                    Budget = File.ReadAllText(file_budget);
+                }             
             }
 
             ShowBudget.Text = "$" + Budget;
