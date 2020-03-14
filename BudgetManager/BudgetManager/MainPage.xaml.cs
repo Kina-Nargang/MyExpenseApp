@@ -23,6 +23,10 @@ namespace BudgetManager
         {
             InitializeComponent();
 
+            BalanceCalulation();
+        }
+
+        private void BalanceCalulation() { 
 
             // set up expense
             var files = Directory.EnumerateFiles(App.FolderPath, "*.expenses.csv");
