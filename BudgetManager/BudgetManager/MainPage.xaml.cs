@@ -33,9 +33,10 @@ namespace BudgetManager
             double ExpenseTotal = 0.00;
 
             // first time run, expense file doesn't exist yet.
-            if(files.ToString() == null)
+            // run foreach loop only when files exist
+            if(files == null || !files.Any())
             {
-                ExpenseTotal = 0.00;
+                Total = "0.00";
             }
             else
             {
@@ -46,9 +47,8 @@ namespace BudgetManager
 
                     ExpenseTotal += double.Parse(array[1]);
                 }
+                Total = ExpenseTotal.ToString();
             }
-
-            Total = ExpenseTotal.ToString();
 
             ShowTotal.Text = "$" + Total;
 
@@ -77,9 +77,13 @@ namespace BudgetManager
                 Balance = balance.ToString();
                 ShowBalance.Text = "-$" + Balance;
             }
+            else if(balance == 0)
+            {
+                ShowBalance.Text = "$0.00";
+            }
             else
             {
-                // $0.00
+                // format: $0.00
                 Balance = balance.ToString();
                 ShowBalance.Text = "$" + Balance;
             }
