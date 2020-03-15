@@ -47,8 +47,8 @@ namespace BudgetManager
             Budget budget = new Budget();
             if (string.IsNullOrWhiteSpace(budget.Filename))
             {
-                filename = Path.Combine(App.FolderPath,
-                    $"{Path.GetRandomFileName()}.MonthlyBudget.csv");
+                filename = Path.Combine(App.FolderPath, "MonthlyBudget.csv");
+                //$"{Path.GetRandomFileName()}.MonthlyBudget.csv");
 
                 budget.Filename = filename;
                 budget.Amount = editor.Text;
@@ -64,7 +64,7 @@ namespace BudgetManager
             await Navigation.PushAsync(new ExpenseList());
         }
 
-        private void OnCancelButtonClicked(object sender,EventArgs e)
+        private async void OnCancelButtonClicked(object sender,EventArgs e)
         {
             if (File.Exists(filename))
             {
@@ -72,7 +72,8 @@ namespace BudgetManager
             }
 
             editor.Text = string.Empty;
+            await Navigation.PopAsync();
         }
-
+        
     }
 }

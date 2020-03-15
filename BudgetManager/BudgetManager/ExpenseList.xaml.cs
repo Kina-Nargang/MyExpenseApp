@@ -56,6 +56,11 @@ namespace BudgetManager
             });
         }
 
+        async void OnHomeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
+
         private async void OnListViewItemSelected(object sender,
             SelectedItemChangedEventArgs e)
         {

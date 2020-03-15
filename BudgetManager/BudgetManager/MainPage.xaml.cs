@@ -22,7 +22,6 @@ namespace BudgetManager
         public MainPage()
         {
             InitializeComponent();
-
             //BalanceCalulation();
         }
 
@@ -35,7 +34,7 @@ namespace BudgetManager
             double ExpenseTotal = 0.00;
 
             // first time run, expense file doesn't exist yet.
-            // run foreach loop only when files exist
+            // run foreach loop only when files exist(from 2n run)
             if (files == null || !files.Any())
             {
                 Total = "0.00";
@@ -49,41 +48,52 @@ namespace BudgetManager
 
                     ExpenseTotal += double.Parse(array[1]);
                 }
-                Total = ExpenseTotal.ToString();
+
+                if (ExpenseTotal == 0)
+                {
+                    Total = "0.00";
+                }
+                else
+                {
+                    Total = ExpenseTotal.ToString();
+                }               
             }
 
             ShowTotal.Text = "$" + Total;
-            /*
-                        //set up budget
-                        string filename_budget = Path.GetFileName("*.MonthlyBudget.txt");
 
-                        // first time run, budget file doesn't exist yet. Or file is empty
-                        if (!File.Exists(filename_budget) || File.ReadAllText(filename_budget).Length == 0)
-                        {
-                            Budget = "0.00";
-                        }
-                        else
-                        {
-                            Budget = File.ReadAllText(filename_budget);
-                        }
 
-                        ShowBudget.Text = "$" + Budget;
-            */
+            // set up budget
+            // in the futrue we might have multiple budget files
+            // but for now we only have ONE budget file
+            // the dudget file will be overwritten from 2nd run
+            var filename_budget = Directory.EnumerateFiles(App.FolderPath, "MonthlyBudget.csv");
+            double count_budget = 0.00;
 
-            var filename_budget = Directory.EnumerateFiles(App.FolderPath, "*.MonthlyBudget.csv");
             if (filename_budget == null || !filename_budget.Any())
             {
                 Budget = "0.00";
             }
             else
             {
+                // only loop once because we only use one dudget file              
                 foreach(var file_budget in filename_budget)
                 {
-                    Budget = File.ReadAllText(file_budget);
-                }             
+                    count_budget += double.Parse(File.ReadAllText(file_budget));
+                }
+
+                // if budget is 0 : output format is "0.00"
+                if (count_budget == 0)
+                {
+                    Budget = "0.00";
+                }
+                else
+                {
+                    Budget = count_budget.ToString();
+                }              
             }
 
             ShowBudget.Text = "$" + Budget;
+
 
             //balance
             double balance = double.Parse(Budget) - double.Parse(Total);
@@ -105,8 +115,6 @@ namespace BudgetManager
                 Balance = balance.ToString();
                 ShowBalance.Text = "$" + Balance;
             }
-
-
         }
 /*
         private void BalanceCalulation() { 

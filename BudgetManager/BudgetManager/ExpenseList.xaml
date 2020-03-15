@@ -8,8 +8,12 @@
              BackgroundColor="Black"
              Title="Expenses List">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add expense"
+        <ToolbarItem Text="+expense"
                      Clicked="OnExpenseAddedClicked" />
+        <ToolbarItem 
+                     IconImageSource="home.png"
+                     Clicked="OnHomeClicked" 
+                    />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView"
               Margin="20"
