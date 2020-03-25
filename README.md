@@ -5,7 +5,10 @@ Youtube link : https://youtu.be/UubEL9Z-Fxc
 This mobile is using xamarin and C#, emulating on Android. It allows users to enter expense and budget, calculates the balance for users.
 
 <Design>
+ 
 This mobile app has 4 pages: Home page, expense entry page, budget page and expense list page.
+ 
+ 
   * Home page : 
       - Navigation: 
           1. +Expense button : navigate to enpense entry page
