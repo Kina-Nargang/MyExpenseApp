@@ -40,19 +40,19 @@ This mobile app has 4 pages: Home page, expense entry page, budget page and expe
           1. Save -> save data as a file
           2. Cancel -> delete file if file is exsiting, otherwise clear input
           
-    * Budget page:
-       - Navigatiion
-           1. <- back button: navigate to home page
-       - Editor:
-           1. input budget -> numeric keyboard (zero allows)          
-       - Button :
-           1. Save -> save data as a file (currently only allow user to save one budge file , after file is created overwrite the file)
-           2. Cancel -> delete file if file is exsiting, otherwise clear input
+  * Budget page:
+      - Navigatiion
+          1. <- back button: navigate to home page
+      - Editor:
+          1. input budget -> numeric keyboard (zero allows)          
+      - Button :
+          1. Save -> save data as a file (currently only allow user to save one budge file , after file is created overwrite the file)
+          2. Cancel -> delete file if file is exsiting, otherwise clear input
           
-    * Expense List page:
-       - Navigation:
-           1. <- back button: navigate to home page
-           2. +Expense button : navigate to Expense Entry page
-           3. Home button : navigate to Home page
-       - ListView:
-           1. A list of expenses that are saved from Eexpense Entry page
+  * Expense List page:
+      - Navigation:
+          1. <- back button: navigate to home page
+          2. +Expense button : navigate to Expense Entry page
+          3. Home button : navigate to Home page
+      - ListView:
+          1. A list of expenses that are saved from Eexpense Entry page
