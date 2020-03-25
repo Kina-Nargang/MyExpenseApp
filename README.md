@@ -15,9 +15,9 @@ This mobile app has 4 pages: Home page, expense entry page, budget page and expe
  
   * Home page : 
       - Navigation: 
-          1. +Expense button : navigate to enpense entry page
-          2. +Budge button : navigate to budge entry page
-          3. +Add button : navigate to expense entry page
+          1. +Expense button : navigate to Enpense Entry page
+          2. +Budge button : navigate to Budge Entry page
+          3. +Add button : navigate to Expense Entry page
       - Labels:
           1. welcome
           2. calculataion
@@ -29,7 +29,7 @@ This mobile app has 4 pages: Home page, expense entry page, budget page and expe
   
   * Expense Entry page:
       - Navigatiion
-          1. <- back button: navigate to home page
+          1. <- back button: navigate to previous page
       - Entry:
           1. Date picker -> default today's date
           2. Expense Name -> Alphabet keyboard
@@ -42,7 +42,7 @@ This mobile app has 4 pages: Home page, expense entry page, budget page and expe
           
   * Budget page:
       - Navigatiion
-          1. <- back button: navigate to home page
+          1. <- back button: navigate to previous page
       - Editor:
           1. input budget -> numeric keyboard (zero allows)          
       - Button :
@@ -51,7 +51,7 @@ This mobile app has 4 pages: Home page, expense entry page, budget page and expe
           
   * Expense List page:
       - Navigation:
-          1. <- back button: navigate to home page
+          1. <- back button: navigate to previous page
           2. +Expense button : navigate to Expense Entry page
           3. Home button : navigate to Home page
           4. Expese textcell: navigate to Expense Entry page
