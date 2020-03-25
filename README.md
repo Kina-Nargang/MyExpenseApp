@@ -54,5 +54,6 @@ This mobile app has 4 pages: Home page, expense entry page, budget page and expe
           1. <- back button: navigate to home page
           2. +Expense button : navigate to Expense Entry page
           3. Home button : navigate to Home page
+          4. Expese textcell: navigate to Expense Entry page
       - ListView:
           1. A list of expenses that are saved from Eexpense Entry page
