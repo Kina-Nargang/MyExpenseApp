@@ -1,16 +1,16 @@
 # MyExpenseApp
 Youtube link : https://youtu.be/UubEL9Z-Fxc
 
-<Summary>
+*<Summary>*
  
  
 This mobile is using xamarin and C#, emulating on Android. It allows users to enter expense and budget, calculates the balance for users.
 
 
-<Design>
+*<Design>*
  
  
-This mobile app has 4 pages: Home page, expense entry page, budget page and expense list page.
+This mobile app has 4 pages: Home page, Expense Entry page, Budget page and Expense List page.
  
  
   * Home page : 
