@@ -17,7 +17,7 @@ This mobile app has 4 pages: Home page, expense entry page, budget page and expe
       - Navigation: 
           1. +Expense button : navigate to enpense entry page
           2. +Budge button : navigate to budge entry page
-          3. + button : navigate to expense entry page
+          3. +Add button : navigate to expense entry page
       - Labels:
           1. welcome
           2. calculataion
